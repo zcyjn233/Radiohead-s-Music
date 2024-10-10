@@ -1,5 +1,5 @@
 ---
-title: "Radiohead"
+title: "Exploring the Relationship Between Danceability and Energy in Radiohead's Music"
 author: 
   - Wei Wang
   - Chiyue Zhuang
@@ -21,6 +21,11 @@ library(tidyverse)
 options(scipen=999)
 radiohead <- readRDS(here("data","01-raw_data","radiohead.rds"))
 ```
+1. Introduction
+Radiohead is a highly acclaimed British rock band known for its genre-spanning and experimental approach to music. Their sound has evolved over the years, incorporating various technologies and styles, resulting in a diverse range of albums. This paper explores the relationship between two key audio characteristics in their songs: "danceability" and "energy." These two features can help us better understand Radiohead's stylistic choices, especially regarding how rhythmic and dynamic their tracks tend to be.
+
+Danceability measures how suitable a track is for dancing, based on the tempo, rhythm stability, and overall beat strength. Energy, on the other hand, reflects the intensity and activity in a track, generally influenced by loudness, tempo, and frequency. Given Radiohead's diverse body of work, exploring how these two attributes correlate across their discography could provide valuable insights into their creative direction and innovation.
+
 
 
 ```{r}
@@ -46,6 +51,7 @@ ggplot(radiohead, aes(x = danceability, y = energy)) +
 
 ```
 
+2.Analysis
 Based on the scatter plot, the distribution of danceability and energy across Radiohead's tracks shows a somewhat positive correlation. While the points are scattered, indicating some variability, there is a visible trend suggesting that songs with higher danceability tend to have slightly higher energy levels. However, this correlation is not particularly strong, which is reflective of Radiohead’s diverse musical styles.
 
 The linear trend line indicates that as danceability increases, energy also rises, albeit modestly. This is particularly evident in certain albums like A Moon Shaped Pool, where the tracks exhibit more consistent relationships between danceability and energy. In contrast, other albums demonstrate more variability, likely reflecting the experimental nature of some of their tracks.
@@ -70,9 +76,5 @@ Weaknesses and next steps should also be included.
 # Model details {#sec-model-details}
 
 ## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
 
 
