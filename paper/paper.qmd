@@ -1,0 +1,78 @@
+---
+title: "Radiohead"
+author: 
+  - Wei Wang
+  - Chiyue Zhuang
+thanks: "Code and data are available at: [https://github.com/zcyjn233/Reflection-exercise-5)."
+date: today
+date-format: long
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(here)
+library(tidyverse)
+options(scipen=999)
+radiohead <- readRDS(here("data","01-raw_data","radiohead.rds"))
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+
+radiohead <- as_tibble(radiohead)
+
+library(ggplot2)
+library(dplyr)
+
+
+ggplot(radiohead, aes(x = danceability, y = energy)) +
+  geom_point(alpha = 0.6, color = "blue") +
+  theme_minimal() +
+  labs(
+    title = "Danceability vs Energy",
+    x = "Danceability",
+    y = "Energy"
+  ) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") 
+
+
+```
+
+Based on the scatter plot, the distribution of danceability and energy across Radiohead's tracks shows a somewhat positive correlation. While the points are scattered, indicating some variability, there is a visible trend suggesting that songs with higher danceability tend to have slightly higher energy levels. However, this correlation is not particularly strong, which is reflective of Radiohead’s diverse musical styles.
+
+The linear trend line indicates that as danceability increases, energy also rises, albeit modestly. This is particularly evident in certain albums like A Moon Shaped Pool, where the tracks exhibit more consistent relationships between danceability and energy. In contrast, other albums demonstrate more variability, likely reflecting the experimental nature of some of their tracks.
+
+
+
+We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+
+## Weaknesses and next steps
+
+Weaknesses and next steps should also be included.
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+# Model details {#sec-model-details}
+
+## Posterior predictive check
+
+In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
+
+In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
+
+
