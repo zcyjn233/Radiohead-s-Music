@@ -31,7 +31,8 @@ Danceability measures how suitable a track is for dancing, based on the tempo, r
 ```{r}
 #| warning: false
 #| message: false
-
+#| label: DE
+#| fig-cap: "Scatter plot A Moon Shaped Pool exhibit more consistent trends, while other albums highlight greater variability, reflecting the band's experimental diversity"
 radiohead <- as_tibble(radiohead)
 
 library(ggplot2)
