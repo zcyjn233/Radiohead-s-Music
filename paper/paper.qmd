@@ -22,9 +22,9 @@ options(scipen=999)
 radiohead <- readRDS(here("data","01-raw_data","radiohead.rds"))
 ```
 1.Introduction
-Radiohead is a highly acclaimed British rock band known for its genre-spanning and experimental approach to music,from@osborn2016everything.Their sound has evolved over the years, incorporating various technologies and styles, resulting in a diverse range of albums. This paper explores the relationship between two key audio characteristics in their songs: "danceability" and "energy." These two features can help us better understand Radiohead's stylistic choices, especially regarding how rhythmic and dynamic their tracks tend to be.
+Radiohead is a highly acclaimed British rock band known for its genre-spanning and experimental approach to music,from @osborn2016everything. Their sound has evolved over the years, incorporating various technologies and styles, resulting in a diverse range of albums. This paper explores the relationship between two key audio characteristics in their songs: "danceability" and "energy." These two features can help us better understand Radiohead's stylistic choices, especially regarding how rhythmic and dynamic their tracks tend to be.
 
-Danceability measures how suitable a track is for dancing, based on the tempo, rhythm stability, and overall beat strength. Energy, on the other hand, reflects the intensity and activity in a track, generally influenced by loudness, tempo, and frequency. Given Radiohead's diverse body of work, exploring how these two attributes correlate across their discography could provide valuable insights into their creative direction and innovation,from@osborn2016everything.
+Danceability measures how suitable a track is for dancing, based on the tempo, rhythm stability, and overall beat strength. Energy, on the other hand, reflects the intensity and activity in a track, generally influenced by loudness, tempo, and frequency. Given Radiohead's diverse body of work, exploring how these two attributes correlate across their discography could provide valuable insights into their creative direction and innovation,from @osborn2016everything.
 
 
 
