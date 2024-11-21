@@ -19,4 +19,9 @@ radiohead <- get_artist_audio_features("radiohead")
 
 
 #### Save data ####
-saveRDS(radiohead, "data/00-raw_data/radiohead.rds")         
+saveRDS(radiohead, "data/01-raw_data/radiohead.rds")   
+
+
+
+
+
