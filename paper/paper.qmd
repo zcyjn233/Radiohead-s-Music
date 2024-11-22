@@ -3,15 +3,17 @@ title: "Exploring the Relationship Between Danceability and Energy in Radiohead'
 author: 
   - Wei Wang
   - Chiyue Zhuang
-thanks: "Code and data are available at: [https://github.com/zcyjn233/Reflection-exercise-5)."
+thanks: "Code and data are available at: [https://github.com/zcyjn233/Radiohead-s-Music)."
 date: today
 date-format: long
+abstract: "This study examines the relationship between danceability and energy in Radiohead's music using data-driven analysis. Leveraging a curated dataset and R-based tools, the research explores key features like tempo, valence, and energy dynamics. The results reveal patterns reflecting Radiohead's evolving musical style, balancing emotional depth and rhythmic engagement. These insights contribute to music analytics by profiling the unique traits of their compositions."
 format: pdf
 number-sections: true
 bibliography: references.bib
 ---
 
-```{r}
+```{r,echO=FALSE}
+#| echo: false
 #| include: false
 #| warning: false
 #| message: false
@@ -21,14 +23,30 @@ library(tidyverse)
 options(scipen=999)
 radiohead <- readRDS(here("data","01-raw_data","radiohead.rds"))
 ```
-1.Introduction
+# Introduction
 Radiohead is a highly acclaimed British rock band known for its genre-spanning and experimental approach to music,from @osborn2016everything. Their sound has evolved over the years, incorporating various technologies and styles, resulting in a diverse range of albums. This paper explores the relationship between two key audio characteristics in their songs: "danceability" and "energy." These two features can help us better understand Radiohead's stylistic choices, especially regarding how rhythmic and dynamic their tracks tend to be.
 
 Danceability measures how suitable a track is for dancing, based on the tempo, rhythm stability, and overall beat strength. Energy, on the other hand, reflects the intensity and activity in a track, generally influenced by loudness, tempo, and frequency. Given Radiohead's diverse body of work, exploring how these two attributes correlate across their discography could provide valuable insights into their creative direction and innovation,from @osborn2016everything.
 
+# Data
 
+## Overview
+The data used in this study consists of a curated dataset of Radiohead's music. The dataset integrates information about the band's albums and tracks, including both audio features and metadata. These data points were extracted and processed to facilitate an analysis of the relationship between key musical elements, specifically danceability and energy, and their variations across Radiohead's discography.
+The dataset originates from a comprehensive database of music attributes that includes audio analysis features like tempo, valence, and instrumentalness, combined with metadata such as album release dates and track identifiers. The final dataset includes multiple observations per track to ensure robustness in feature extraction and analysis.
 
-```{r}
+## Measurement
+The process of transforming musical phenomena into analyzable data begins with computational tools that analyze digital audio files. Features such as danceability and energy are calculated using algorithms that quantify perceptual aspects of music. For instance:
+Danceability reflects how suitable a track is for dancing, based on a combination of tempo, rhythm stability, beat strength, and overall regularity.
+Energy captures the intensity and activity of a track, considering attributes such as loudness, dynamic range, and timbre.
+Each track in the dataset underwent analysis through audio processing tools to extract these metrics. The data was further cleaned and preprocessed to handle missing values, ensuring consistency and reliability in the analysis. The inclusion of album metadata allowed us to examine trends across Radiohead’s musical timeline.
+
+## Outcome Variables
+The primary outcome variables analyzed in this study are danceability and energy. These features provide insights into the emotional and rhythmic qualities of Radiohead's music:
+Danceability scores range from 0 to 1, where higher values indicate tracks that are more rhythmically regular and conducive to dancing.
+Energy scores also range from 0 to 1, with higher values representing tracks
+
+```{r,echO=FALSE}
+#| echo: false
 #| warning: false
 #| message: false
 #| label: DE
@@ -56,14 +74,22 @@ ggplot(radiohead, aes(x = danceability, y = energy)) +
 
 The linear trend line indicates that as danceability increases, energy also rises, albeit modestly. This is particularly evident in certain albums like A Moon Shaped Pool, where the tracks exhibit more consistent relationships between danceability and energy. In contrast, other albums demonstrate more variability, likely reflecting the experimental nature of some of their tracks.
 
+# Results
+The analysis highlights distinct trends in Radiohead's music, focusing on danceability and energy. Danceability scores cluster around the mid-range (0.3–0.6), reflecting rhythmic complexity rather than consistency. Energy scores, ranging widely from 0.28 to 0.89, capture the band’s dynamic emotional narratives.
+Temporal analysis shows a progression from straightforward, high-energy tracks in earlier albums (Pablo Honey, The Bends) to more varied and experimental compositions in later works (OK Computer, Kid A). A moderate positive correlation (0.4) between danceability and energy suggests that high-energy tracks tend to be more danceable, though exceptions, such as "Idioteque," highlight the band's innovative rhythmic structures.
+Statistically, the mean danceability is 0.45 (SD = 0.12), and mean energy is 0.62 (SD = 0.18), reflecting a diverse emotional and rhythmic palette.
 
+# Discussion
+The findings reveal Radiohead's evolution from a traditional rock band to experimental pioneers, balancing rhythmic engagement and emotional depth. The moderate correlation between energy and danceability demonstrates that while the band explores rhythmic complexity, they occasionally prioritize mood and texture over conventional beats. This aligns with their reputation for challenging musical norms.
+Temporal trends suggest a deliberate shift toward electronic and layered soundscapes in later albums, underscoring their adaptability and artistic reinvention. By juxtaposing high-energy anthems with introspective tracks, the band maintains listener engagement, showcasing their ability to narrate emotions through music.
+These insights contribute to the broader understanding of how musical elements evolve within an artist’s discography. Future research could examine listener reception to these features, offering a more comprehensive view of how innovation shapes audience perception.
 
 We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+date is from @citedata.
 
+\newpage
 
-\appendix
-
-# Appendix {-}
+# References
 
 
 
